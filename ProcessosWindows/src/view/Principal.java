@@ -10,7 +10,7 @@ public class Principal {
 		
 		int opc = 0;
 		String path;
-		//Menu de interação dos módulos
+//		Menu de interação dos métodos
 		while(opc != 9){
 			opc = Integer.parseInt(JOptionPane.showInputDialog("[--SELECIONE UMA DAS OPCOES--] " +
 					"\n1 - Propriedades do sistema \n2 - Leitura de um processo do sistema \n3 - Inicia um processo"
