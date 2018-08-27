@@ -6,6 +6,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 //Classe "RedesController"
 public class RedesController {
@@ -30,14 +31,28 @@ public class RedesController {
 				BufferedReader buffer = new BufferedReader(leitor);
 				String linha = buffer.readLine();
 				
+//				Criação lista
+				ArrayList<String> listIp = new ArrayList();
+				
 //				Enquanto existir linha, apresentar no console
 				while(linha != null){
-//					Se localizar "Adaptador" e "IPv4", apresentar no console
+//					Se localizar "Adaptador" e "IPv4", guardar na lista
 					if(linha.contains("Adaptador") || linha.contains("IPv4")){
-						System.out.println(linha);
+						listIp.add(linha);
 					}
 					linha = buffer.readLine();
 				}//Fim while
+				
+				int i = 0;
+				int n = listIp.size();
+				//Caso a linha possua "IPv4", apresentar na tela a anterior e a atual
+				for(i=0; i<n; i++){
+					if(listIp.get(i).contains("IPv4")){
+						System.out.println(listIp.get(i-1));
+						System.out.println(listIp.get(i));
+					}//Fim "if"
+					
+				}//Fim "for"
 			}//Fim "try" 
 			
 			catch (IOException e) {
