@@ -97,5 +97,4 @@ public class RedesController {
 			}//Fim "catch"
 		}//Fim "if"
 	}//Fim classe "ping"
-	
 }//Fim classe "RedesController"
