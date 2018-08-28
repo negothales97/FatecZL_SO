@@ -49,7 +49,7 @@ public class RedesController {
 				for(i=0; i<n; i++){
 					if(listIp.get(i).contains("IPv4")){
 						System.out.println(listIp.get(i-1));
-						System.out.println(listIp.get(i));
+						System.out.println(listIp.get(i).substring(49));
 					}//Fim "if"
 					
 				}//Fim "for"
