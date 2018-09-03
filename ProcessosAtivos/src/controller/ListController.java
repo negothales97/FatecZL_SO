@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-import javax.swing.JOptionPane;
 
 //Classe "ListController"
 public class ListController {
@@ -15,11 +14,14 @@ public class ListController {
 		super();
 	}//Fim construtor "ListController"
 	
-	
-	
+//	Sistema operacional
+	public String sistema(){
+		String so = System.getProperty("os.name");
+		return so;
+	}
 //	Classe "processos"
 	public void processos(){
-		String so = System.getProperty("os.name");
+		String so = sistema();
 		
 			try {
 				Process proc = null;
@@ -61,13 +63,13 @@ public class ListController {
 		} 
 //		Caso apresente o erro, será gerado uma string com o erro e buscará pelo código do erro
 		catch (IOException e) {
-			String erro = e.getMessage();
+			e.getMessage();
 		}
 	}//Fim classe "chamaProcesso"
 	
 	public void mataPid(String kill){
 //		Comando para finalizar o processo, junto com o PID
-		String so = System.getProperty("os.name");
+		String so = sistema();
 		String cmdPid = null;
 		if(so.contains("Windows 10")){
 			cmdPid = "TASKKILL /PID ";
@@ -95,7 +97,7 @@ public class ListController {
 	
 	public void mataNome(String kill){
 //		Comando para finalizar o processo, junto com o PID
-		String so = System.clearProperty("os.name");
+		String so = sistema();
 		
 		String cmdNome = null;
 		if(so.contains("Windows 10")){

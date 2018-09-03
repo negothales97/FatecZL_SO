@@ -12,7 +12,7 @@ public class Main {
 		String kill = null;
 		
 		
-//		Meun de interação dos métodos
+//		Menu de interação dos métodos
 		while(opc != 9){
 			opc = Integer.parseInt(JOptionPane.showInputDialog("[--SELECIONE UMA DAS OPCOES--] " +
 					"\n1 - Lista Processos do sistema\n2 - Finaliza processo via PID \n3 - Finaliza processo via nome"
